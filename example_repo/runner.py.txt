@@ -1,0 +1,15 @@
+# Imports
+from tqdm import tqdm
+import torch.optim as optim
+# TODO
+
+# Functions
+
+class Trainer():
+	def __init__(self):
+		# TODO
+		pass
+
+	def __call__(self, model, train, val):
+		# TODO
+		pass

@@ -1,0 +1,20 @@
+# Imports 
+import torch.nn as nn
+import torch.nn.functional as F
+# TODO
+
+class CNN(nn.Module): 
+    def __init__(self):
+      super().__init__() 
+      # TODO
+
+    def forward(self, x):
+      # TODO
+
+class AE(nn.Module): 
+    def __init__(self):
+      super().__init__() 
+      # TODO
+
+    def forward(self, x):
+      # TODO

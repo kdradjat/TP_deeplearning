@@ -1,0 +1,35 @@
+# Imports
+import argparse
+from runner import Trainer
+from model import CNN, AE
+from utils import data_processing
+
+# Arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("-model", "--model",
+                        dest = "model",
+                        type = str,
+                        required = True,
+                        help="Indicate the model to train (required).")
+parser.add_argument("-data", "--data",
+                        dest = "data",
+                        type = str,
+                        required = True,
+                        help="Indicate the dataset to use for training (required).")
+args = parser.parse_args()
+
+if args.model=='cnn':
+	model = CNN()
+elif args.model=='autoencoder':
+	model = AE()
+
+# Dataloaders
+train_loader, val_loader = data_processing(args.data)
+
+def main():
+   runner = Trainer()
+   runner.train(model, train_loader, val_loader)
+
+# Run function    
+if __name__ == '__main__':
+    main()
